@@ -49,9 +49,7 @@ class SimpleTableViewExampleViewController: UIViewController {
                 with: self,
                 onNext: { owner, cellString in
                     if cellString == "NumbersExample" {
-                        let orangeVC = UIViewController()
-                        orangeVC.view.backgroundColor = .systemOrange
-                        owner.navigationController?.pushViewController(orangeVC, animated: true)
+                        owner.navigationController?.pushViewController(NumbersViewController(), animated: true)
                     }
                 }
             ).disposed(by: disposeBag)
