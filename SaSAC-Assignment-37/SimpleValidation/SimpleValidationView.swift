@@ -12,16 +12,16 @@ import SnapKit
 final class SimpleValidationView: UIView {
     
     private let userNameTitleLabel = UILabel()
-    private let userNameInputTextField = UITextField()
-    private let userNameValidationLabel = UILabel()
+    let userNameInputTextField = UITextField()
+    let usernameValidationLabel = UILabel()
     private let userNameStackView = UIStackView()
     
     private let passwordTitleLabel = UILabel()
-    private let passwordInputTextField = UITextField()
-    private let passwordValidationLabel = UILabel()
+    let passwordInputTextField = UITextField()
+    let passwordValidationLabel = UILabel()
     private let passwordStackView = UIStackView()
     
-    private let completeButton = UIButton(configuration: .filled())
+    let completeButton = UIButton(configuration: .filled())
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,8 +46,8 @@ private extension SimpleValidationView {
         
         userNameTitleLabel.text = "Username"
         userNameInputTextField.borderStyle = .roundedRect
-        userNameValidationLabel.textColor = .systemRed
-        userNameValidationLabel.text = "Username has to be at least 5 characters"
+        usernameValidationLabel.textColor = .systemRed
+        usernameValidationLabel.text = "Username has to be at least 5 characters"
         
         passwordTitleLabel.text = "Password"
         passwordInputTextField.borderStyle = .roundedRect
@@ -66,7 +66,7 @@ private extension SimpleValidationView {
     func setupHierarchy() {
         userNameStackView.addArrangedSubview(userNameTitleLabel)
         userNameStackView.addArrangedSubview(userNameInputTextField)
-        userNameStackView.addArrangedSubview(userNameValidationLabel)
+        userNameStackView.addArrangedSubview(usernameValidationLabel)
         addSubview(userNameStackView)
         passwordStackView.addArrangedSubview(passwordTitleLabel)
         passwordStackView.addArrangedSubview(passwordInputTextField)
