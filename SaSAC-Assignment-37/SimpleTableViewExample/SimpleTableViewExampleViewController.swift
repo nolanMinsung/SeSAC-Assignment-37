@@ -50,6 +50,8 @@ class SimpleTableViewExampleViewController: UIViewController {
                 onNext: { owner, cellString in
                     if cellString == "NumbersExample" {
                         owner.navigationController?.pushViewController(NumbersViewController(), animated: true)
+                    } else if cellString == "SimpleValidationExample" {
+                        owner.navigationController?.pushViewController(SimpleValidationViewController(), animated: true)
                     }
                 }
             ).disposed(by: disposeBag)
