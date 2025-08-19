@@ -11,13 +11,13 @@ import SnapKit
 
 final class NumbersView: UIView {
     
-    private let numberTextField1 = UITextField()
-    private let numberTextField2 = UITextField()
-    private let numberTextField3 = UITextField()
+    let numberTextField1 = UITextField()
+    let numberTextField2 = UITextField()
+    let numberTextField3 = UITextField()
     private let numberTextFieldStackView = UIStackView()
     private let plusOperatorLabel = UILabel()
     private let separator = UIView()
-    private let resultNumberLabel = UILabel()
+    let resultNumberLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,7 +53,7 @@ private extension NumbersView {
         
         resultNumberLabel.font = .systemFont(ofSize: 19, weight: .bold)
         resultNumberLabel.textAlignment = .right
-        resultNumberLabel.text = "100"
+        resultNumberLabel.text = "0"
     }
     
     func setupHierarchy() {
