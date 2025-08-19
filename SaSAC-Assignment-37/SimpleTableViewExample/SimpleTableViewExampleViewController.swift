@@ -14,7 +14,7 @@ class SimpleTableViewExampleViewController: UIViewController {
     
     let rootView = SimpleTableViewExampleView()
     
-    let tableViewItems = Observable.just(["NumbersExample", "SimpleValidationExample"] + [2, 3, 4, 5, 6, 7, 8, 9, 10].map({ "\($0)" }))
+    let tableViewItems = Observable.just(["NumbersExample으로 가기", "SimpleValidationExample으로 가기"] + [2, 3, 4, 5, 6, 7, 8, 9, 10].map({ "\($0)" }))
     
     let disposeBag = DisposeBag()
     
@@ -48,9 +48,10 @@ class SimpleTableViewExampleViewController: UIViewController {
             .bind(
                 with: self,
                 onNext: { owner, cellString in
-                    if cellString == "NumbersExample" {
+                    // 하드코딩이라 좋지는 않다. 개선이 필요한 부분.
+                    if cellString == "NumbersExample으로 가기" {
                         owner.navigationController?.pushViewController(NumbersViewController(), animated: true)
-                    } else if cellString == "SimpleValidationExample" {
+                    } else if cellString == "SimpleValidationExample으로 가기" {
                         owner.navigationController?.pushViewController(SimpleValidationViewController(), animated: true)
                     }
                 }
