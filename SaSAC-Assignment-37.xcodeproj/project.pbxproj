@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4E57A6D02E54709900418962 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4E57A6CF2E54709900418962 /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		4E57A6252E545B1100418962 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		4E57A60E2E545B0F00418962 /* SaSAC-Assignment-37.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SaSAC-Assignment-37.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E57A6242E545B1100418962 /* SaSAC-Assignment-37Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SaSAC-Assignment-37Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E57A62E2E545B1100418962 /* SaSAC-Assignment-37UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SaSAC-Assignment-37UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E57A6CF2E54709900418962 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -88,6 +93,7 @@
 		4E57A6052E545B0F00418962 = {
 			isa = PBXGroup;
 			children = (
+				4E57A6CF2E54709900418962 /* .gitignore */,
 				4E57A6102E545B0F00418962 /* SaSAC-Assignment-37 */,
 				4E57A6272E545B1100418962 /* SaSAC-Assignment-37Tests */,
 				4E57A6312E545B1100418962 /* SaSAC-Assignment-37UITests */,
@@ -225,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E57A6D02E54709900418962 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
