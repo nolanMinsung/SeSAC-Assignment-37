@@ -39,10 +39,7 @@ final class NumbersViewModel {
             let num3 = Int(text3) ?? 0
             return (num1 + num2 + num3).description
         }.bind(
-            with: self,
-            onNext: { owner, resultString in
-                resultTextOutput.accept(resultString)
-            }
+            onNext: { resultTextOutput.accept($0) }
         )
         .disposed(by: disposeBag)
         

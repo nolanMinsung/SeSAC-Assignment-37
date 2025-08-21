@@ -13,6 +13,7 @@ import RxCocoa
 class SimpleValidationViewController: UIViewController {
     
     private let rootView = SimpleValidationView()
+    private let viewModel = SimpleValidationViewModel()
     private let disposeBag = DisposeBag()
     
     override func loadView() {
@@ -22,52 +23,36 @@ class SimpleValidationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let input = SimpleValidationViewModel.Input(
+            userNameInput: rootView.userNameInputTextField.rx.text.orEmpty,
+            passwordInput: rootView.passwordInputTextField.rx.text.orEmpty,
+            completeButtonTapInput: rootView.completeButton.rx.tap
+        )
         
-        let usernameValidation = rootView.userNameInputTextField.rx.text.orEmpty
-            .map { $0.count >= 5 }
-            .share(replay: 1)
+        let output = viewModel.transform(input: input)
         
-        let passwordValidation = rootView.passwordInputTextField.rx.text.orEmpty
-            .map { $0.count >= 5 }
-            .share(replay: 1)
-        
-        usernameValidation
+        output.usernameValidationResult
             .map { $0 ? 0.0 : 1.0 }
             .bind(to: rootView.usernameValidationLabel.rx.alpha)
             .disposed(by: disposeBag)
         
-        passwordValidation
+        output.passwordValidationResult
             .map { $0 ? 0.0 : 1.0 }
             .bind(to: rootView.passwordValidationLabel.rx.alpha)
             .disposed(by: disposeBag)
         
-        Observable.combineLatest(
-            usernameValidation,
-            passwordValidation
-        )
-        .map { $0.0 && $0.1 }
-        .bind(to: rootView.completeButton.rx.isEnabled)
-        .disposed(by: disposeBag)
+        output.completeButtonEnable
+            .bind(to: rootView.completeButton.rx.isEnabled)
+            .disposed(by: disposeBag)
         
-        
-        
-        // 한 개의 스트림만 가져가고자 한다면 다음과 같은 방법으로도 가능할 듯.
-        // 근데 alpha 값 등을 조절하는 데에는 bind 코드가 더 깔끔하다고 생각되긴 함.
-        
-//        Observable.combineLatest(
-//            rootView.userNameInputTextField.rx.text.orEmpty,
-//            rootView.passwordInputTextField.rx.text.orEmpty
-//        )
-//        .map { ($0.count >= 5, $1.count >= 5) }
-//        .do { [weak self] isUsernameValidLength, isValidPasswordLenth in
-//            self?.rootView.usernameValidationLabel.alpha = isUsernameValidLength ? 0 : 1
-//            self?.rootView.passwordValidationLabel.alpha = isValidPasswordLenth ? 0 : 1
-//        }
-//        .map { $0 && $1 }
-//        .bind(to: rootView.completeButton.rx.isEnabled)
-//        .disposed(by: disposeBag)
-        
-        rootView.completeButton.addTarget(self, action: #selector(completeButtonTapped), for: .touchUpInside)
+        output.completeButtonTapOutput
+            .bind(
+                with: self,
+                onNext: { owner, _ in
+                    owner.showCompleteAlert()
+                }
+            )
+            .disposed(by: disposeBag)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -76,7 +61,7 @@ class SimpleValidationViewController: UIViewController {
         view.endEditing(true)
     }
     
-    @objc private func completeButtonTapped() {
+    private func showCompleteAlert() {
         let alertCon = UIAlertController(title: "Username, Password 모두 유효합니다.", message: "This is wonderful.", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "확인", style: .cancel)
         alertCon.addAction(cancelAction)
