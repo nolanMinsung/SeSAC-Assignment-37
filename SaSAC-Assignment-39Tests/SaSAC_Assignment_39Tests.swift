@@ -1,14 +1,14 @@
 //
-//  SaSAC_Assignment_37Tests.swift
-//  SaSAC-Assignment-37Tests
+//  SeSAC_Assignment_39Tests.swift
+//  SeSAC-Assignment-39Tests
 //
 //  Created by 김민성 on 8/19/25.
 //
 
 import XCTest
-@testable import SaSAC_Assignment_37
+@testable import SeSAC_Assignment_39
 
-final class SaSAC_Assignment_37Tests: XCTestCase {
+final class SaSAC_Assignment_39Tests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

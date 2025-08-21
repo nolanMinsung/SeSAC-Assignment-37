@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4E57A60D2E545B0F00418962"
-               BuildableName = "SeSAC-Assignment-37.app"
-               BlueprintName = "SeSAC-Assignment-37"
-               ReferencedContainer = "container:SeSAC-Assignment-37.xcodeproj">
+               BuildableName = "SeSAC-Assignment-39.app"
+               BlueprintName = "SeSAC-Assignment-39"
+               ReferencedContainer = "container:SeSAC-Assignment-39.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,9 +36,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4E57A6232E545B1100418962"
-               BuildableName = "SeSAC-Assignment-37Tests.xctest"
-               BlueprintName = "SeSAC-Assignment-37Tests"
-               ReferencedContainer = "container:SeSAC-Assignment-37.xcodeproj">
+               BuildableName = "SeSAC-Assignment-39Tests.xctest"
+               BlueprintName = "SeSAC-Assignment-39Tests"
+               ReferencedContainer = "container:SeSAC-Assignment-39.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4E57A62D2E545B1100418962"
-               BuildableName = "SeSAC-Assignment-37UITests.xctest"
-               BlueprintName = "SeSAC-Assignment-37UITests"
-               ReferencedContainer = "container:SeSAC-Assignment-37.xcodeproj">
+               BuildableName = "SeSAC-Assignment-39UITests.xctest"
+               BlueprintName = "SeSAC-Assignment-39UITests"
+               ReferencedContainer = "container:SeSAC-Assignment-39.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -69,9 +69,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4E57A60D2E545B0F00418962"
-            BuildableName = "SeSAC-Assignment-37.app"
-            BlueprintName = "SeSAC-Assignment-37"
-            ReferencedContainer = "container:SeSAC-Assignment-37.xcodeproj">
+            BuildableName = "SeSAC-Assignment-39.app"
+            BlueprintName = "SeSAC-Assignment-39"
+            ReferencedContainer = "container:SeSAC-Assignment-39.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -86,9 +86,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4E57A60D2E545B0F00418962"
-            BuildableName = "SeSAC-Assignment-37.app"
-            BlueprintName = "SeSAC-Assignment-37"
-            ReferencedContainer = "container:SeSAC-Assignment-37.xcodeproj">
+            BuildableName = "SeSAC-Assignment-39.app"
+            BlueprintName = "SeSAC-Assignment-39"
+            ReferencedContainer = "container:SeSAC-Assignment-39.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

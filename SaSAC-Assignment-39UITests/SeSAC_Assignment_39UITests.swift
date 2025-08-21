@@ -1,13 +1,13 @@
 //
-//  SaSAC_Assignment_37UITests.swift
-//  SaSAC-Assignment-37UITests
+//  SeSAC_Assignment_39UITests.swift
+//  SeSAC-Assignment-39UITests
 //
 //  Created by 김민성 on 8/19/25.
 //
 
 import XCTest
 
-final class SaSAC_Assignment_37UITests: XCTestCase {
+final class SeSAC_Assignment_39UITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
