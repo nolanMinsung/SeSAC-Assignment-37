@@ -13,6 +13,7 @@ import RxCocoa
 class NumbersViewController: UIViewController {
     
     private let rootView = NumbersView()
+    private let viewModel = NumbersViewModel()
     private let disposeBag = DisposeBag()
     
     override func loadView() {
@@ -22,24 +23,29 @@ class NumbersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Observable.combineLatest(
-            rootView.numberTextField1.rx.text.orEmpty,
-            rootView.numberTextField2.rx.text.orEmpty,
-            rootView.numberTextField3.rx.text.orEmpty,
-        ).map { text1, text2, text3 in
-            let num1 = Int(text1) ?? 0
-            let num2 = Int(text2) ?? 0
-            let num3 = Int(text3) ?? 0
-            return (num1 + num2 + num3).description
-        }
-        .bind(to: rootView.resultNumberLabel.rx.text)
-        .disposed(by: disposeBag)
+        bind()
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         
         view.endEditing(true)
+    }
+    
+    private func bind() {
+        
+        let input = NumbersViewModel.Input(
+            textField1Input: rootView.numberTextField1.rx.text.orEmpty,
+            textField2Input: rootView.numberTextField2.rx.text.orEmpty,
+            textField3Input: rootView.numberTextField3.rx.text.orEmpty,
+        )
+        
+        let output = viewModel.transform(input: input)
+        
+        output.resultTextOutput
+            .bind(to: rootView.resultNumberLabel.rx.text)
+            .disposed(by: disposeBag)
+        
     }
     
 }
